@@ -41,4 +41,13 @@ class LeagueVC: UIViewController {
         nextBtn.isEnabled = true
     }
     
+//    Get the new view controller using segue.destinationViewController
+//    Pass the selected object to the new view controller
+//    prepareForSegue is always called before viewDidLoad (on the destination view controller)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
+        }
+    }
+    
 }
